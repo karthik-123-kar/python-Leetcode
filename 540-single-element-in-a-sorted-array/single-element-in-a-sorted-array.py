@@ -1,6 +1,5 @@
 class Solution:
     def singleNonDuplicate(self, nums: List[int]) -> int:
-        result = 0
-        for num in nums:
-            result = result ^ num
-        return result
+        for i in range(0,len(nums),2):
+            if i == len(nums)-1 or nums[i] != nums[i+1]:
+                return nums[i]
